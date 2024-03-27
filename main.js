@@ -4,7 +4,12 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  // ur config
+  apiKey: "AIzaSyAiXomTiEPsXdF9USn7eP26tUGJC-eSQRo",
+  authDomain: "web-rtc-demo-7feb9.firebaseapp.com",
+  projectId: "web-rtc-demo-7feb9",
+  storageBucket: "web-rtc-demo-7feb9.appspot.com",
+  messagingSenderId: "279587276094",
+  appId: "1:279587276094:web:d3951cd581ef907e7f186f"
 };
 
 if (!firebase.apps.length) {
@@ -41,7 +46,7 @@ const sdpOffer = document.getElementById('sdpOffer');
 // 1. Setup media sources
 
 webcamButton.onclick = async () => {
-  localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+  localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
   remoteStream = new MediaStream();
 
   // Push tracks from local stream to peer connection
