@@ -31,6 +31,8 @@ let init = async () => {
 let createOffer = async () => {
     const offer = await peerConnection.createOffer();
     await peerConnection.setLocalDescription(offer);
+    
+    // document.getElementById('offer-sdp').value = JSON.stringify(peerConnection.localDescription);
 };
 
 let createAnswer = async () => {
@@ -73,4 +75,4 @@ init();
 document.getElementById('create-offer').addEventListener('click', createOffer);
 document.getElementById('create-answer').addEventListener('click', createAnswer);
 document.getElementById('add-answer').addEventListener('click', addAnswer);
-document.getElementById('add-ice-candidates').addEventListener('click', addIceCandidates);
+// document.getElementById('add-ice-candidates').addEventListener('click', addIceCandidates);
